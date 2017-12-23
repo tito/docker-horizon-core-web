@@ -2,14 +2,14 @@ FROM opennms/openjdk:8u151-jdk
 
 LABEL maintainer "Ronny Trommer <ronny@opennms.org>"
 
-ARG OPENNMS_VERSION=develop
+ARG OPENNMS_VERSION=branches/features/drift
 ARG MIRROR_HOST=yum.opennms.org
 
 ENV OPENNMS_KARAF_SSH_HOST 0.0.0.0
 ENV OPENNMS_KARAF_SSH_PORT 8101
 
 RUN yum -y --setopt=tsflags=nodocs update && \
-    rpm -Uvh https://${MIRROR_HOST}/repofiles/opennms-repo-${OPENNMS_VERSION}-rhel7.noarch.rpm && \
+    rpm -Uvh https://${MIRROR_HOST}/repofiles/opennms-repo-${OPENNMS_VERSION//\//-}-rhel7.noarch.rpm && \
     rpm --import https://${MIRROR_HOST}/OPENNMS-GPG-KEY && \
     yum -y install iplike \
                    rrdtool \
