@@ -20,7 +20,7 @@
 ## General Project Information
 
 * CI/CD Status: [![CircleCI](https://circleci.com/gh/opennms-forge/docker-horizon-core-web.svg?style=svg)](https://circleci.com/gh/opennms-forge/docker-horizon-core-web)
-* Container Image Info: [![](https://images.microbadger.com/badges/version/opennms/horizon-core-web.svg)](https://microbadger.com/images/opennms/horizon-core-web "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/opennms/horizon-core-web.svg)](https://microbadger.com/images/opennms/horizon-core-web "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/license/opennms/horizon-core-web.svg)](https://microbadger.com/images/opennms/horizon-core-web "Get your own license badge on microbadger.com")
+* Container Image Info: [![](https://images.microbadger.com/badges/version/opennms/horizon-core-web:drift.svg)](https://microbadger.com/images/opennms/horizon-core-web:drift "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/opennms/horizon-core-web:drift.svg)](https://microbadger.com/images/opennms/horizon-core-web:drift "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/license/opennms/horizon-core-web:drift.svg)](https://microbadger.com/images/opennms/horizon-core-web:drift "Get your own license badge on microbadger.com") [![Anchore Image Overview](https://anchore.io/service/badges/image/2d43d826022e69ec183fdd04fa7a6f4fc0be2c3c39256334815ac35662b4f4c2)](https://anchore.io/image/dockerhub/2d43d826022e69ec183fdd04fa7a6f4fc0be2c3c39256334815ac35662b4f4c2?repo=opennms%2Fhorizon-core-web&tag=drift)
 * CI/CD System: [CircleCI]
 * Docker Container Image Repository: [DockerHub]
 * Issue- and Bug-Tracking: [GitHub issue]
@@ -93,7 +93,7 @@ It is easily possible to add Java options to control the behavior of the JVM for
 The environment variable `JAVA_OPTS` is passed on the Java command and can be used to extend or overwrite JVM options.
 
 IMPORTANT: To give more control the Java binary command natively in the docker-entrypoint.sh and Java options in `opennms.conf` are *not* evaluated.
-           The java process has PID 1 and 
+           The java process has PID 1 and
 
 Used in an environment file:
 ```
