@@ -102,6 +102,12 @@ jobs:
                 docker tag horizon-core-web ${DOCKERHUB_PROJECT_USER}/${DOCKERHUB_PROJECT_NAME}:drift
                 docker push ${DOCKERHUB_PROJECT_USER}/${DOCKERHUB_PROJECT_NAME}:drift
                 ;;
+              features*)
+                DOCKERHUB_TAG=${CIRCLE_BRANCH#features/}
+                DOCKERHUB_TAG=${DOCKERHUB_TAG/\//-}
+                docker tag horizon-core-web ${DOCKERHUB_PROJECT_USER}/${DOCKERHUB_PROJECT_NAME}:${DOCKERHUB_TAG}
+                docker push ${DOCKERHUB_PROJECT_USER}/${DOCKERHUB_PROJECT_NAME}:${DOCKERHUB_TAG}
+                ;;
               release*)
                 docker tag horizon-core-web ${DOCKERHUB_PROJECT_USER}/${DOCKERHUB_PROJECT_NAME}:latest
                 docker tag horizon-core-web ${DOCKERHUB_PROJECT_USER}/${DOCKERHUB_PROJECT_NAME}:${DOCKERHUB_TAG}
@@ -125,9 +131,9 @@ workflows:
                 - /release\/.*/
                 - master
                 - drift
+                - /features\/.*/
           requires:
             - build_docker_image
-
 
   daily-build:
     triggers:
