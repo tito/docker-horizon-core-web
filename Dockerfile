@@ -46,7 +46,7 @@ WORKDIR /opt/opennms
 
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
 
-CMD [ "-h" ]
+CMD [ "-s" ]
 
 ##------------------------------------------------------------------------------
 ## EXPOSED PORTS
